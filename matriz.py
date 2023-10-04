@@ -28,8 +28,18 @@ def buscarCadenaAdyacenteMasLarga():
                 for y in range(len(matriz[0])):
                     # Detener el recorrido si no hay suficientes elementos para superar el maximo.
                     if longitudMaxima >= max(len(matriz[0]) - x, len(matriz[0]) - y):                   
-                        break             
-                    for dx, dy in [(0, 1), (1, 0), (1, 1), (-1, 1)]:
+                        break
+                    if(x==0 and y==0):
+                        direcciones = [(0, 1), (1, 0), (1, 1)]
+                    else:
+                        if (y==0):
+                            direcciones = [(0, 1), (1, 1)]
+                        else:
+                            if(x==0):
+                                direcciones = [(1, 0), (1, 1), (-1, 1)]
+                            else:
+                                direcciones = []          
+                    for dx, dy in direcciones:
                         length = controlarEnDireccion(x, y, dx, dy)
                         if length > longitudMaxima:
                             longitudMaxima = length
