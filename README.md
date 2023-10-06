@@ -12,4 +12,5 @@ La forma de realizar la prueba es la siguiente:
    ejemplo).
 2. Ejecutar el comando 'python matriz.py'
 
+En matrizMejorada.py hay una version mejorada.
 
